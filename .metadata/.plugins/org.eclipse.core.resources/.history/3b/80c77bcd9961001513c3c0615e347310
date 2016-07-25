@@ -1,0 +1,16 @@
+
+public class Create {
+
+	public static void main(String[] args) {
+		
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		try {
+			Class.forName(driver);
+		} /*catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}*/
+		
+		System.out.println("Hello World");
+	}
+
+}

@@ -1,0 +1,54 @@
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+
+public class Insert {
+
+public static void main(String[] args) {
+		
+		Connection con = DBconnect.getConnection();
+		
+		try {
+				String fname,lname,gender,email,stname,city,state;
+				long phno,stno,zip;
+				
+				Scanner sc = new Scanner(System.in);
+				System.out.println("Enter phone number");
+				phno = sc.nextLong();
+				System.out.println("Enter first name");
+				fname = sc.nextline();
+				System.out.println("Enter last name");
+				lname = sc.next();
+				System.out.println("Enter email id");
+				email = sc.next();
+				System.out.println("Enter gender");
+				gender = sc.next();
+				System.out.println("Enter street number");
+				stno = sc.nextLong();
+				System.out.println("Enter Street name");
+				stname = sc.next();
+				System.out.println("Enter city name");
+				city = sc.next();
+				System.out.println("Enter state name");
+				state = sc.next();
+				System.out.println("Enter zipcode");
+				zip = sc.nextLong();
+				
+				String query = "insert into contact values ("+phno+
+						",'"+fname+"','"+lname+"','"+gender+"','"+email+"')";
+			
+				Statement st = con.createStatement();
+				st.executeUpdate(query);
+				
+				query = "insert into address values ("+stno+",'"+stname+"','"+city+"'"+
+						",'"+state+"',"+zip+")";
+				
+				st.executeUpdate(query);
+				
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}

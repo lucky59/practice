@@ -1,0 +1,22 @@
+package com.practice;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+public class GameImpl {
+
+	public static void main(String[] args) {
+	
+	  InputStream in = GameImpl.class.getResourceAsStream("cities.txt");
+	  
+	  try
+	  {
+		  BufferedReader br = new BufferedReader(in);  
+	  }
+	  catch(IOException e)
+	  {
+		  e.printStackTrace();
+	  }
+	}
+
+}

@@ -1,0 +1,29 @@
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+
+public class Insert {
+
+public static void main(String[] args) {
+		
+		Connection con = DBconnect.getConnection();
+		
+		try {
+			
+				String query = "insert into contact(9391115698,'venkateshwarlu',"+
+								"'racharla','male','racharla@gmail.com')";
+			
+				Statement st = con.createStatement();
+				st.executeUpdate(query);
+				
+				query = "insert into address(1325,'rodd field rd',"+
+						"'corpus christi','texas',78412)";
+				
+				st.executeUpdate(query);
+				
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}

@@ -1,0 +1,52 @@
+package com.practice;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class GameImpl {
+
+	public static void main(String[] args)
+	{
+		String city = null;
+		List<String> cities = new ArrayList<String>();
+		
+		GeoGame game = new GeoGame();
+		
+		InputStream in = GameImpl.class.getResourceAsStream("cities.txt");
+		BufferedReader br = new BufferedReader(new InputStreamReader(in));
+		
+		try
+		{
+			while ((city = br.readLine()) != null)
+			{
+				String lastWord = city.substring(city.lastIndexOf(" ")+1);
+				cities.add(lastWord);
+			}
+			
+			game.setCities(cities);
+			
+		} 
+		catch (IOException e)
+		{
+		  e.printStackTrace();
+		}
+		
+		System.out.println("\n\t\t\t Geography Game \n");
+		
+		Scanner sc = new Scanner(System.in);
+	
+		String player1 = null;
+		String palyer2 = null;
+		
+		System.out.println("Please input the first player's Name:");
+		player1 = sc.nextLine().trim();
+		System.out.println("Please input the Second player's Name:");
+		player2 = sc.nextLine().trim();
+		
+	}
+}

@@ -1,0 +1,20 @@
+package com.practice;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class GameImpl {
+
+	public static void main(String[] args) {
+	
+		try
+		{
+			InputStream inputStream = YourClass.class.getResourceAsStream(“file.txt”);
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
+		
+	}
+
+}

@@ -1,0 +1,17 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+
+public class Create {
+
+	public static void main(String[] args) throws SQLException {
+		
+		Connection con = DBconnect.getConnection();
+		
+		String query = "delete table contact";
+		con.createStatement().execute(query);
+	}
+
+}

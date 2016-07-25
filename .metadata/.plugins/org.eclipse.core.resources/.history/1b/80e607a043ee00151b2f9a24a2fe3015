@@ -1,0 +1,60 @@
+package com.practice;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class GeoGame {
+
+	private List<String> firstCities;
+	private List<String> secCities;
+	private List<String> cities;
+	private String firstPlayer;
+	private String secondPlayer;
+	
+	public GeoGame()
+	{
+		firstCities = new ArrayList<String>();
+		secCities  = new ArrayList<String>();
+		cities = new ArrayList<String>(); 
+	}
+
+	public List<String> getFirstCities() {
+		return firstCities;
+	}
+
+	public void setFirstCities(List<String> firstCities) {
+		this.firstCities = firstCities;
+	}
+
+	public List<String> getSecCities() {
+		return secCities;
+	}
+
+	public void setSecCities(List<String> secCities) {
+		this.secCities = secCities;
+	}
+
+	public List<String> getCities() {
+		return cities;
+	}
+
+	public void setCities(List<String> cities) {
+		this.cities = cities;
+	}
+
+	public String getFirstPlayer() {
+		return firstPlayer;
+	}
+
+	public void setFirstPlayer(String firstPlayer) {
+		this.firstPlayer = firstPlayer;
+	}
+
+	public String getSecondPlayer() {
+		return secondPlayer;
+	}
+
+	public void setSecondPlayer(String secondPlayer) {
+		this.secondPlayer = secondPlayer;
+	}
+}

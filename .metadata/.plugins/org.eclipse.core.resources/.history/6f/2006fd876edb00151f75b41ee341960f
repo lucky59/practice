@@ -1,0 +1,11 @@
+package com.practice;
+
+public class CRLF {
+
+	public static void main(String args[])
+	{
+		System.out.print("Hello ");
+		System.out.print("Prem ");
+		System.out.print("Hw r\r u \n");
+	}
+}

@@ -1,0 +1,82 @@
+package com.practice;
+import java.net.*;
+import java.io.*;
+import java.nio.CharBuffer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class InterceptionProxy2 {
+
+    public static void main(String[] args) throws IOException {
+        ServerSocket serverSocket = null;
+        int port = 10001;
+        try {
+            serverSocket = new ServerSocket(port);
+        } catch (IOException e) {
+            System.out.println("Port Error");
+            System.exit(-1);
+        }
+
+          Socket soc =  serverSocket.accept();
+          BufferedReader br = new BufferedReader(new InputStreamReader(soc.getInputStream()));
+          String line;
+          
+          line = br.readLine();
+          String var[] = line.split(" ");
+          
+          String method = var[0];
+          String host = var[1];
+          String version = var[2];
+          
+          while((line = br.readLine()) != null)
+          {
+        	  System.out.println(line);
+        	  System.out.println("Hello");
+          }
+          System.out.println("Outside");
+          Socket client = new Socket("google.com",80);
+          OutputStream out = client.getOutputStream();
+          Writer writer = new OutputStreamWriter(out, "UTF-8");
+          writer = new BufferedWriter(writer);
+          writer.write("GET / HTTP/1.1\r\n");
+          writer.write("Connection: Close\r\n");
+          writer.write("\r\n");
+          
+          BufferedReader dI = new BufferedReader(new InputStreamReader(client.getInputStream(), "UTF-8"));
+          while((line = dI.readLine())!= null)
+          {
+        	  System.out.println(line);
+          }
+        serverSocket.close();
+    }/*
+	
+	public static void main(String[] args) throws Exception {
+        String host = "google.com";
+        int port = 80;
+        Socket socket = new Socket(host, port);
+
+        //BufferedWriter writer = new BufferedWriter(
+        //       new OutputStreamWriter(socket.getOutputStream(), "UTF-8"));
+        PrintWriter writer = new PrintWriter(socket.getOutputStream());
+        writer.write("GET / HTTP/1.1\r\n");
+        writer.write("Connection: Close\r\n");
+        writer.write("\r\n");
+        writer.flush();
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream(), "UTF-8"));
+
+        // reader.lines().forEach(System.out.println);
+        String line;
+        System.out.println("Reading lines:");
+        while ((line = reader.readLine()) != null) {
+            System.out.println("* " + line);
+        }
+        System.out.println("DONE READING RESPONSE");
+
+        reader.close();
+        writer.close();
+        // socket.close();
+
+        System.out.println("Finished"); 
+    }*/
+}

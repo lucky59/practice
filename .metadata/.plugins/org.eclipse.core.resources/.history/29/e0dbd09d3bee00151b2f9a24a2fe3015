@@ -1,0 +1,13 @@
+package com.practice;
+
+import java.io.InputStream;
+
+public class GameImpl {
+
+	public static void main(String[] args) {
+	
+	  InputStream inputStream = GameImpl.class.getResourceAsStream("cities.txt");
+		
+	}
+
+}

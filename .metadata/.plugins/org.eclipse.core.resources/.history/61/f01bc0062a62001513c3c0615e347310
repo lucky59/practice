@@ -1,0 +1,38 @@
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+
+public class Insert {
+
+public static void main(String[] args) {
+		
+		Connection con = DBconnect.getConnection();
+		
+		try {
+				String fname,lname,gender,email,stname,city,state;
+				long phno,stno,zip;
+				
+				Scanner sc = new Scanner(System.in);
+				System.out.println("Enter phone number");
+				phno = sc.nextLine();
+				System.out.println("Enter first name");
+				fname = sc.nextLine();
+				System.out.println(phno+" "+fname);
+				String query = "insert into contact values ('9391115698', 'venkateshwarlu',"+
+								" 'racharla', 'male', 'racharla@gmail.com' )";
+			
+				Statement st = con.createStatement();
+				st.executeUpdate(query);
+				
+				query = "insert into address values (1325, 'rodd field rd',"+
+						" 'corpus christi','texas',78412)";
+				
+				st.executeUpdate(query);
+				
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}

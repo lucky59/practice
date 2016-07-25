@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+org.eclipse.jdt.core.builder.resourceCopyExclusionFilter=*.ucls,*.useq
+org.eclipse.jdt.core.codeComplete.visibilityCheck=enabled
+org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
+org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.7
+org.eclipse.jdt.core.compiler.compliance=1.7
+org.eclipse.jdt.core.compiler.problem.assertIdentifier=error
+org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
+org.eclipse.jdt.core.compiler.source=1.7
+org.eclipse.jdt.core.userLibrary.spring-core=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<userlibrary systemlibrary\="false" version\="2">\r\n\t<archive path\="G\:/spring libraries/core/com.springsource.org.apache.commons.logging-1.1.1.jar"/>\r\n\t<archive path\="G\:/spring libraries/core/com.springsource.org.apache.log4j-1.2.15.jar"/>\r\n\t<archive path\="G\:/spring libraries/core/jmxtools-1.2.1.jar"/>\r\n\t<archive path\="G\:/spring libraries/core/org.springframework.asm-3.0.1.RELEASE-A.jar"/>\r\n\t<archive path\="G\:/spring libraries/core/org.springframework.beans-3.0.1.RELEASE-A.jar"/>\r\n\t<archive path\="G\:/spring libraries/core/org.springframework.context-3.0.1.RELEASE-A.jar"/>\r\n\t<archive path\="G\:/spring libraries/core/org.springframework.core-3.0.1.RELEASE-A.jar"/>\r\n\t<archive path\="G\:/spring libraries/core/org.springframework.expression-3.0.1.RELEASE-A.jar"/>\r\n</userlibrary>\r\n

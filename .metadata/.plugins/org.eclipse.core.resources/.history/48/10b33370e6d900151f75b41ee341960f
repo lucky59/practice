@@ -1,0 +1,49 @@
+package com.practice;
+import java.net.*;
+import java.io.*;
+import java.nio.CharBuffer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class InterceptionProxy2 {
+
+    public static void main(String[] args) throws IOException {
+        ServerSocket serverSocket = null;
+        int port = 10001;
+        try {
+            serverSocket = new ServerSocket(port);
+        } catch (IOException e) {
+            System.out.println("Port Error");
+            System.exit(-1);
+        }
+
+          Socket soc =  serverSocket.accept();
+          BufferedReader br = new BufferedReader(new InputStreamReader(soc.getInputStream()));
+          String line;
+          
+          line = br.readLine();
+          String var[] = line.split(" ");
+          
+          String method = var[0];
+          String host = var[1];
+          String version = var[2];
+          
+          while((line = br.readLine()) != null)
+          {
+        	  System.out.println(line);
+          }
+          
+          Socket client = new Socket(host,80);
+          OutputStream out = client.getOutputStream();
+          Writer writer = new OutputStreamWriter(out, "UTF-8");
+          writer = new BufferedWriter(writer);
+          writer.write(method+" "+host+" "+version+" \r\n");
+          writer.flush();
+          DataInputStream dI = new DataInputStream(client.getInputStream());
+          while((line = dI.readLine())!= null)
+          {
+        	  System.out.println(line);
+          }
+        serverSocket.close();
+    }
+}

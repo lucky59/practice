@@ -1,0 +1,18 @@
+package com.practice.game;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class GeoGame {
+
+	private List<String> firstCities;
+	private List<String> secCities;
+	private List<String> cities;
+	
+	public GeoGame()
+	{
+		firstCities = new ArrayList<String>();
+		secCities  = new ArrayList<String>();
+		cities = new ArrayList<String>(); 
+	}
+}

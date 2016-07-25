@@ -1,0 +1,35 @@
+package com.practice;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.List;
+
+public class GameImpl {
+
+	public static void main(String[] args)
+	{
+		String city = null;
+		List<String> cities = new ArrayList<String>();
+		
+		GeoGame game = new GeoGame();
+		
+		InputStream in = GameImpl.class.getResourceAsStream("cities.txt");
+		BufferedReader br = new BufferedReader(new InputStreamReader(in));
+		
+		try
+		{
+			while ((city = br.readLine()) != null)
+			{
+				String lastWord = city.substring(city.lastIndexOf(" ")+1);
+				System.out.println(lastWord);
+			}
+				
+		} 
+		catch (IOException e)
+		{
+		  e.printStackTrace();
+		}
+	}
+}
